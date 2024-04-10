@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
@@ -11,8 +13,9 @@ body {
 }
 
 .main {
+  margin-top: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 24px;
 }
 
@@ -34,24 +37,86 @@ body {
   align-items: center;
   gap: 8px;
 }
-
+.pulse-ring {
+  content: '';
+  width: 100px;
+  height: 100px;
+	background: #189BFF;
+  border: 5px solid #189BFF;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  animation: pulse infinite 1.5s;
+}
 button {
-  display: inline-block;
-  padding: 0 16px;
-  border-radius: 8px;
+	border: none;
+  padding: 0;
+  border-radius: 100%;
+  width: 40px;
   height: 40px;
-
-  background-color: #4caf50; /* Green */
-  border: none;
-
+  font-size: 3em;
   color: #fff;
-  text-align: center;
-  font-size: 16px;
-
-  cursor: pointer;
-  transition-duration: 0.4s;
+  padding: 0;
+  margin: 10px;
+  background: #189BFF;
+	position: relative;
+	z-index: 999;
+  display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+#chat{
+  width: 800px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  height: 500px;
+  background-color: #ededed;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+#stop{
+  background-color: red;
+  margin-left: 20px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+		border: 65px solid #0B3082;
+  }
+  50% {
+		border: solid #A3FFC2;		
+		opacity: 0.8;
+  }
+	
+	 90% {
+    transform: scale(3.2);
+		opacity: 0.2;
+		border: 3px solid #2E3CFF;
+  }
+  100% {
+    transform: scale(3.3);
+		opacity: 0;
+		border: 1px solid #7A89FF;
+  }
+}
 button:hover {
   background-color: #45a049;
 }
@@ -61,6 +126,12 @@ input {
   padding: 0 12px;
 
   font-size: 16px;
+}
+
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 #status {
@@ -79,7 +150,7 @@ input {
 
 .videoSectionWrap {
   position: relative;
-
+  height: calc(100dvh - 170px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,8 +181,8 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("./"),
 
-  /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.02) 100%),*/
   /*  radial-gradient(*/
   /*    108.09% 141.42% at 0% 100%,*/
   /*    rgba(219, 255, 213, 0.3) 0%,*/
@@ -119,10 +190,13 @@ input {
   /*  ),*/
   /*  linear-gradient(135deg, #ffeede 5.71%, #ffd9d9 47%, #a3dce7 93.47%);*/
 }
-
+#bgInput{
+  display: none;
+}
 .videoWrap .videoEle {
   width: 100%;
-  max-height: 400px;
+  height: 100vh;
+
 }
 
 /*---------- Switch START ----------*/
@@ -200,6 +274,7 @@ input:checked + .slider:before {
 
 .videoSectionWrap .show {
   display: flex;
+  object-fit: contain;
 }
 
 .hide {
@@ -207,4 +282,78 @@ input:checked + .slider:before {
 }
 .show {
   display: flex;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  box-shadow: 10px 10px 5px #ededed;
+  width: 100vw;
+}
+
+.header h3{
+  padding: 20px 10px;
+    background-color: #ddd;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+
+.header h2{
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+body{
+  padding-top: 10px;
+}
+
+.videoSectionWrap , .videoSectionWrap .videoWrap , .videoWrap .videoEle ,.videoWrap .videoEle{
+  height: 400px;
+}
+
+#chat{
+  /* height: 190px; */
+  padding-top: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+@media screen and (max-width:767px){
+  button{
+    width: 120px;
+    height: 120px;
+  }
+  .main{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button i{
+    font-size: 50px !important;
+  }
+
+  #chat{
+    width: 360px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    padding: 0px;
+    height: 500px;
+    background-color: #ededed;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow-y: auto;
+  }
+
+.videoSectionWrap , .videoSectionWrap .videoWrap , .videoWrap .videoEle ,.videoWrap .videoEle{
+  height: 400px;
+}
 }

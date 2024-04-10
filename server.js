@@ -1,12 +1,17 @@
 const express = require('express');
 const OpenAI = require('openai')
 const path = require('path');
+const cors = require('cors');
 const app = express();
+const corsOptions = {
+  origin: 'http://127.0.0.1:5500/',
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
 const openai = new OpenAI({
-  apiKey: "<your openai api key>",
+  apiKey: "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",
 });
 
 const systemSetup = "you are a demo streaming avatar from HeyGen, an industry-leading AI generation product that specialize in AI avatars and videos.\nYou are here to showcase how a HeyGen streaming avatar looks and talks.\nPlease note you are not equipped with any specific expertise or industry knowledge yet, which is to be provided when deployed to a real customer's use case.\nAudience will try to have a conversation with you, please try answer the questions or respond their comments naturally, and concisely. - please try your best to response with short answers, limit to one sentence per response, and only answer the last question."
@@ -30,6 +35,6 @@ app.post('/openai/complete', async (req, res) => {
   }
 });
 
-app.listen(3000, function () {
+app.listen(5000, function () {
   console.log('App is listening on port 3000!');
 });
