@@ -10,32 +10,49 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   padding: 24px;
+  overflow-x: hidden;
 }
 
+span{
+  text-align: center;
+  margin: 3px;
+  font-size: 15px;
+}
 .main {
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  width: 100%;
 }
 
+.logo{
+  width: 50px;
+  margin: 10px;
+}
 .actionRowsWrap {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  /* gap: 12px; */
+  width: 50%;
+}
+.actionRowsWrap2 {
+  display: flex;
+  flex-direction: column;
+  /* gap: 12px; */
+  width: 100%;
 }
 
 .actionRow {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  /* gap: 12px; */
 }
 
 .actionRow label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
 }
 .pulse-ring {
   content: '';
@@ -80,16 +97,37 @@ button {
     justify-content: center;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #d3d3d3; 
+}
+
+
+#chat-hidden{
+display: none;
+}
+
 #chat{
-  width: 800px;
+  width: 50%;
+  height: 85vh;
   display: flex;
   text-align: center;
   flex-direction: column;
-  height: 500px;
+  /* height: 500px; */
   background-color: #ededed;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
+  transition: 0.5s;
   border-radius: 5px;
   overflow-y: auto;
+  /* transform: translateX(120%); */
 }
 #stop{
   background-color: red;
@@ -154,7 +192,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  /* gap: 12px; */
 }
 
 .actionRow.switchRow {
@@ -204,7 +242,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
 }
 
 .switch {
@@ -283,18 +321,23 @@ input:checked + .slider:before {
 .show {
   display: flex;
 }
-
+.message_chat{
+  font-size: 30px;
+  color: black;
+  margin-right: 500px;
+}
 .header{
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  align-content: center;
   font-size: 30px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-style: normal;
-  box-shadow: 10px 10px 5px #ededed;
-  width: 100vw;
+  /* box-shadow: 10px 5px    #ededed; */
+  width: 100%;
 }
 
 .header h3{
@@ -306,8 +349,8 @@ input:checked + .slider:before {
 
 
 .header h2{
-  font-size: 30px;
-  padding-bottom: 10px;
+  font-size: 16px;
+  /* padding-bottom: 10px; */
 }
 
 body{
@@ -315,7 +358,7 @@ body{
 }
 
 .videoSectionWrap , .videoSectionWrap .videoWrap , .videoWrap .videoEle ,.videoWrap .videoEle{
-  height: 400px;
+  height: 70vh;
 }
 
 #chat{
@@ -324,24 +367,30 @@ body{
   font-family: "Poppins", sans-serif;
 }
 
-
+/* .active{
+  width: 500px;
+} */
 @media screen and (max-width:767px){
   button{
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
   }
+
   .main{
     margin-top: 0px;
     display: flex;
+    /* justify-content:space-around; */
     flex-direction: column;
   }
 
   button i{
-    font-size: 50px !important;
+    font-size: 30px !important;
   }
 
   #chat{
-    width: 360px;
+    font-family: "Poppins", sans-serif;
+    width: 100%;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -351,6 +400,10 @@ body{
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow-y: auto;
+  }
+
+  .actionRowsWrap{
+    width: 100%;
   }
 
 .videoSectionWrap , .videoSectionWrap .videoWrap , .videoWrap .videoEle ,.videoWrap .videoEle{

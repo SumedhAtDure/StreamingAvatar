@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../index.css" />
+    <link rel="icon" href="../logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <script>
+      document.getElementById('mediaElement').removeAttribute("muted");
+      // document.getElementById('mediaElement').removeAttribute("controls");
+    </script> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Chatbot Type 1 Diabetes">  
+    <title>Chatbot Type 1 Diabetes</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <img src="../logo.png" class="logo" alt="">
+      <h2>Chatbot Type 1 Diabetes</h2>
+      <!-- <i class="fa fa-history" onclick="openNav()" class="message_chat" aria-hidden="true"></i> -->
+      <!-- <i class="fa fa-comments" aria-hidden="true"></i> -->
+    </header>
+
+    <div class="main">
+      <div class="actionRowsWrap2" id="actionRowsWrap">
+        <!-- <div class="actionRow">  
+          <label>
+            AvatarID
+            <input id="avatarID" type="text" />
+          </label>
+
+          <label>
+            VoiceID
+            <input id="voiceID" type="text" />
+          </label>
+
+          <button id="newBtn">New</button>
+          <button id="startBtn">Start</button>
+          <button id="closeBtn">Close</button>
+        </div>
+
+        <div class="actionRow">
+          <label>
+            Message
+            <input id="taskInput" type="text" />
+          </label>
+          <button id="repeatBtn">Repeat</button>
+          <button id="talkBtn">Talk</button>
+
+        </div>
+      </div>
+
+      <p id="status"></p> -->
+
+      <div class="videoSectionWrap">
+        <div class="videoWrap">
+          <video id="mediaElement" class="videoEle show" autoplay></video>
+          <canvas id="canvasElement" class="videoEle hide"></canvas>
+        </div>
+
+        <!-- <div class="actionRow switchRow hide" id="bgCheckboxWrap">
+          <div class="switchWrap">
+            <span>Remove back ground</span>
+            <label class="switch">
+              <input type="checkbox" id="removeBGCheckbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <label>
+            Background (CSS)
+            <input
+              type="text"
+              id="bgInput"
+              value='url("https://app.heygen.com/icons/heygen/logo_hori_text_light_bg.svg") center / contain no-repeat'
+            />
+          </label>
+        </div> -->
+        <input
+        type="text"
+        id="bgInput"
+        value='url("") center / contain no-repeat'
+      />
+      </div>
+      <div class="buttons">
+        <!-- <div class="pulse-ring"></div> -->
+        <button id="start"><i class="fa fa-microphone" style="font-size: 18px;" aria-hidden="true"></i></button>
+        <button id="stop"><i class="fa fa-microphone-slash" style="font-size: 18px;" aria-hidden="true"></i></button>
+      </div>
+    </div>
+
+  <div id="chat-hidden">
+    <h3 id="chat">Messages</h3>
+    <p id="transcription">
+
+    </p>
+  </div>
+    <script type="module" src="../index.js"></script>
+  
+    <script>
+function openNav() {
+  let element = document.getElementById("chat")
+  if(element.classList.contains("active")){
+    // element.style.width = "0px";
+    element.classList.remove("active");
+    element.style.transform = "translateX(120%)";
+    document.getElementById("actionRowsWrap").style.width = "100%";
+  }else{
+    // element.style.width = "50%";
+    element.style.transform = "translateX(0%)";
+    // element.style.marginLeft = "50%";
+    element.classList.add("active");
+    document.getElementById("actionRowsWrap").style.width = "50%";
+  }
+}
+
+function closeNav() {
+  document.getElementById("chat").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+// document.getElementById('mediaElement').removeAttribute("muted");
+// document.getElementById('mediaElement').removeAttribute("controls");
+
+    </script>
+
+  </body>
+</html>
